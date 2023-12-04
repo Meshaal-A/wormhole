@@ -4,11 +4,11 @@ use crate::query::{TaxCapResponse, TaxRateResponse, TerraQuery};
 
 /// This is a helper wrapper to easily use our custom queries
 pub struct TerraQuerier<'a> {
-    querier: &'a QuerierWrapper<'a>,
+    querier: &'a QuerierWrapper<'a, TerraQuery>,
 }
 
 impl<'a> TerraQuerier<'a> {
-    pub fn new(querier: &'a QuerierWrapper<'a>) -> Self {
+    pub fn new(querier: &'a QuerierWrapper<'a, TerraQuery>) -> Self {
         TerraQuerier { querier }
     }
 
@@ -18,12 +18,12 @@ impl<'a> TerraQuerier<'a> {
         }
         .into();
 
-        self.querier.custom_query(&request)
+        self.querier.query(&request)
     }
 
     pub fn query_tax_rate(&self) -> StdResult<TaxRateResponse> {
         let request = TerraQuery::TaxRate {}.into();
 
-        self.querier.custom_query(&request)
+        self.querier.query(&request)
     }
 }
