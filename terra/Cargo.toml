@@ -3,13 +3,14 @@ members = [
     "contracts/cw20-wrapped",
     "contracts/wormhole",
     "contracts/token-bridge",
-    "contracts/nft-bridge",
-    "contracts/cw721-wrapped",
-    "packages/cw721",
     "packages/terra-cosmwasm-2.2.0",
-    "contracts/cw721-base",
-    "contracts/mock-bridge-integration",
     "packages/cw20-legacy",
+    "contracts/mock-bridge-integration",
+    # TODO: we should delete these probably, they're not being used, and haven't been migrated to cosmwasm 1.0.0
+    # "contracts/cw721-base",
+    # "contracts/nft-bridge",
+    # "contracts/cw721-wrapped",
+    # "packages/cw721",
 ]
 
 [profile.release]
