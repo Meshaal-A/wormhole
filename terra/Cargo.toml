@@ -9,6 +9,7 @@ members = [
     "packages/terra-cosmwasm-2.2.0",
     "contracts/cw721-base",
     "contracts/mock-bridge-integration",
+    "packages/cw20-legacy",
 ]
 
 [profile.release]
@@ -24,3 +25,4 @@ overflow-checks = true
 
 [patch.crates-io]
 terra-cosmwasm = { path = "./packages/terra-cosmwasm-2.2.0" }
+cw20-legacy = { path = "./packages/cw20-legacy" }
